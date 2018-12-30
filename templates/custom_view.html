@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div>
+        <label><h2>库存盘点</h2> </label>
+        </br>
+        <table class="table" table-layout="fixed" width="600px">
+            <thead>
+                <tr>
+                    {% for thead in theads %}
+                        <th> {{ thead }} </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for tr in trows %}
+                    <tr>
+                        {% for td in tr %}
+                            <td> {{ td | safe }} </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
